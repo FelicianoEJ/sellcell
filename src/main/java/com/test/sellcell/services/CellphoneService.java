@@ -1,8 +1,6 @@
 package com.test.sellcell.services;
 
-// import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import com.test.sellcell.dal.CellphoneDao;
 import com.test.sellcell.models.Cellphone;
@@ -11,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service //("cellphoneService")
+@Service // ("cellphoneService")
 public class CellphoneService {
 
     private final CellphoneDao cellphoneDataAccess;
@@ -21,7 +19,8 @@ public class CellphoneService {
         this.cellphoneDataAccess = cellphoneDataAccess;
     }
 
-    public boolean cellphoneIdExist(UUID id) {
+    public boolean cellphoneIdExist(String id) {
+        // UUID uuid = UUID.fromString(id);
         return cellphoneDataAccess.existsById(id);
     }
 
@@ -34,8 +33,9 @@ public class CellphoneService {
         return cellphoneDataAccess.saveAll(cellphoneList);
     }
 
-    public boolean deleteById(UUID id) {
+    public boolean deleteById(String id) {
         if (cellphoneIdExist(id)) {
+            // UUID uuid = UUID.fromString(id);
             cellphoneDataAccess.deleteById(id);
             return true;
         } else {
@@ -51,7 +51,7 @@ public class CellphoneService {
         return cellphoneDataAccess.count();
     }
 
-    public Optional<Cellphone> getCellphoneById(UUID id) {
+    public Optional<Cellphone> getCellphoneById(String id) {
         return cellphoneDataAccess.findById(id);
     }
 

@@ -1,1 +1,5 @@
-http://localhost:8080/api/v1/cellphone
+http://localhost:8080/api/v1/cellphones
+
+###
+
+http://localhost:8080/api/v1/cellphones/d8f2a835-5ff2-451f-a0c8-a3ccdf5cee2a

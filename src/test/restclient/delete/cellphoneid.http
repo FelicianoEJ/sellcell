@@ -1,0 +1,1 @@
+DELETE http://localhost:8080/api/v1/cellphones/15e68938-e5b6-44bc-938f-5de08603fa29 HTTP/1.1
